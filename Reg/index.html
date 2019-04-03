@@ -1,0 +1,80 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<title>Регулярные выражения</title> 
+<style type="text/css"> 
+.correct { 
+border: solid 2px green; 
+} 
+
+.incorrect { 
+border: solid 2px red; 
+} 
+
+</style> 
+</head> 
+<body> 
+<div class="swap"> 
+<form class="valid" id="myForm"> 
+<label for="name">Имя:</label> 
+<input type="text" id="name" placeholder="Введите ваше имя"> 
+<br>
+<label for="tel">Телефон:</label> 
+<input type="text" id="tel" placeholder="Введите ваш Телефон"> 
+<br>
+<label for="mail">E-mail:</label> 
+<input type="text" id="mail" placeholder="Введите вашу почту"> 
+<br>
+<button class="send" type="submit">Отправить</button>
+<br>
+</form> 
+</div> 
+</body> 
+<script type="text/javascript"> 
+let regexp = /'/g; 
+let regexp2 = /^'|\s'|'\s|'$/gi; 
+
+window.onload = function () { 
+document 
+.getElementById('myForm') 
+.addEventListener('submit', function (event) { 
+event.preventDefault(); 
+let nameUser = document.getElementById('name').value; 
+let telUser = document.getElementById('tel').value; 
+let mailUser = document.getElementById('mail').value; 
+if(/^[a-zа-яё]{1,30}$/i.test(nameUser)){ 
+document.getElementById('name').classList.remove("incorrect"); 
+document.getElementById('name').classList.add("correct"); 
+} 
+else { 
+document.getElementById('name').classList.remove("correct"); 
+document.getElementById('name').classList.add("incorrect"); 
+} 
+if(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(telUser)){ 
+document.getElementById('tel').classList.remove("incorrect"); 
+document.getElementById('tel').classList.add("correct"); 
+} 
+else { 
+document.getElementById('tel').classList.remove("correct"); 
+document.getElementById('tel').classList.add("incorrect"); 
+} 
+if(/.+@.+\..+/i.test(mailUser)){ 
+document.getElementById('mail').classList.remove("incorrect"); 
+document.getElementById('mail').classList.add("correct"); 
+} 
+else { 
+document.getElementById('mail').classList.remove("correct"); 
+document.getElementById('mail').classList.add("incorrect"); 
+} 
+}); 
+} 
+
+
+
+console.log("Основа 'регулярного выражения' – 'aren't' паттерн.".replace(regexp, "\"")); 
+
+console.log("Основа 'регулярного выражения' – aren't 'паттерн.'".replace(regexp2, "\" ")); 
+
+</script> 
+</html>
