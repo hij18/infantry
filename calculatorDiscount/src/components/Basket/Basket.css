@@ -1,0 +1,30 @@
+.Basket {
+    border-top: solid 1px black;
+    margin-top: 20px;
+    width: 624px;
+    padding-top: 20px;
+}
+
+.discContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.discount {
+    display: flex;
+    width: 624px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.discount label {
+    margin-right: 10px;
+}
+
+.discount input {
+    width: 50px;
+}
+
+.discount button {
+    height:  100%;
+}

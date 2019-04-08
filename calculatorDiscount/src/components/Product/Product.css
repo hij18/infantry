@@ -1,0 +1,18 @@
+.Product {
+    width: 624px;
+}
+
+.newProductForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.newProductForm button {
+    height: 100%;
+    margin-bottom: 16px;
+}
+
+.formGroup {
+    margin: 0;
+}
